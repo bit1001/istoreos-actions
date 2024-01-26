@@ -423,3 +423,10 @@ CONFIG_PACKAGE_grep=y
 CONFIG_PACKAGE_procps-ng=y
 CONFIG_PACKAGE_procps-ng-ps=y
 " >> .config
+#NFA765
+echo "
+CONFIG_PACKAGE_kmod-ath11k=y
+CONFIG_ATH11K_THERMAL=y
+CONFIG_PACKAGE_kmod-ath11k-pci=y
+CONFIG_PACKAGE_ath11k-firmware-wcn6855=y
+" >> .config
