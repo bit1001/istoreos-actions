@@ -87,7 +87,22 @@ pushd MyConfig
 git clone --depth=1 https://github.com/Siriling/OpenWRT-MyConfig .
 popd
 
+mkdir passwall2
+pushd passwall2
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 .
+popd
+
+
+mkdir passwall
+pushd passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall .
+popd
+
+
 mkdir package/community
+mv -rf openwrt-passwall2 ./package/community
+mv -rf openwrt-passwall-packages ./package/community
+mv -rf openwrt-passwall ./package/community
 pushd package/community
 
 # 系统相关应用
@@ -269,26 +284,26 @@ CONFIG_PACKAGE_luci-app-eqos=y
 
 # 科学上网和代理应用
 #SSR
-# CONFIG_PACKAGE_luci-app-ssr-plus=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_V2ray=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Xray=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Kcptun=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Hysteria=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_IPT2Socks=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_NaiveProxy=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Redsocks2=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Server=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Server=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Simple_Obfs=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_V2ray_Plugin=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Server=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
+CONFIG_PACKAGE_luci-app-ssr-plus=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NONE_V2RAY=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_V2ray=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Kcptun=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Hysteria=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_IPT2Socks=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_NaiveProxy=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDEINCLUDE_Redsocks2=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Client=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_NONE_Server=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Server=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Simple_Obfs=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_V2ray_Plugin=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Server=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
 
 #Passwall和Passwall2
 CONFIG_PACKAGE_luci-app-passwall2=y
@@ -358,7 +373,7 @@ CONFIG_PACKAGE_luci-app-adguardhome=y
 # CONFIG_PACKAGE_luci-app-ssr-mudb-server=y
 # CONFIG_PACKAGE_luci-app-trojan-server=y
 # CONFIG_PACKAGE_luci-app-openvpn-server=y
-# CONFIG_PACKAGE_luci-app-pptp-server=y
+CONFIG_PACKAGE_luci-app-pptp-server=y
 # CONFIG_PACKAGE_luci-app-softethervpn=y
 
 # DNS
