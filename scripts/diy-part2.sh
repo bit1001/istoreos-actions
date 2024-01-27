@@ -87,26 +87,7 @@ pushd MyConfig
 git clone --depth=1 https://github.com/Siriling/OpenWRT-MyConfig .
 popd
 
-mkdir passwall2
-pushd passwall2
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 .
-popd
-
-
-mkdir passwall
-pushd passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall .
-popd
-
-mkdir openwrt-passwall-packages
-pushd openwrt-passwall-packages
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages .
-popd
-
 mkdir package/community
-mv -rf openwrt-passwall2 ./package/community
-mv -rf openwrt-passwall-packages ./package/community
-mv -rf openwrt-passwall ./package/community
 pushd package/community
 
 # 系统相关应用
