@@ -100,7 +100,7 @@ popd
 
 mkdir openwrt-passwall-packages
 pushd openwrt-passwall-packages
-git clone --depth=1 https://github.com/openwrt-passwall-packages .
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages .
 popd
 
 mkdir package/community
